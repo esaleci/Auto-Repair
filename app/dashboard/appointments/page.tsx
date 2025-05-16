@@ -88,9 +88,9 @@ export default function AppointmentsPage() {
         </Select>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 ">
         {Object.entries(groupedAppointments).map(([date, dateAppointments]) => (
-          <div key={date} className="space-y-4">
+          <div key={date} className="space-y-4 ">
             <h3 className="text-lg font-semibold">{formatDate(new Date(date))}</h3>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {dateAppointments.map((appointment) => (

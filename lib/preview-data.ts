@@ -86,6 +86,22 @@ export const previewData = {
       createdAt: "2023-04-15T09:00:00.000Z",
       updatedAt: "2023-04-15T09:00:00.000Z",
     },
+     {
+      id: "apt_05",
+      date: "2023-04-20T16:00:00.000Z",
+      repairOrder: {
+        customer: {
+          firstName: "Ike",
+          lastName: "Turner",
+        },
+        vehicle: {
+          make: "Lexus",
+          model: "RX",
+        },
+      },
+      createdAt: "2023-04-17T10:00:00.000Z",
+      updatedAt: "2023-04-17T10:00:00.000Z",
+    },
     {
       id: "apt_02",
       date: "2023-04-22T09:30:00.000Z",
@@ -630,5 +646,26 @@ export const previewAppointments = [
       name: "Uptown Auto Repair",
     },
     description: "Check engine light - diagnostic",
+  },
+   {
+    id: "apt_04",
+    date: "2023-04-21T14:30:00.000Z",
+    status: "SCHEDULED",
+    customer: {
+      id: "cust_04",
+      firstName: "Diana",
+      lastName: "Ross",
+    },
+    vehicle: {
+      id: "veh_04",
+      make: "Chevrolet",
+      model: "Malibu",
+      year: 2017,
+    },
+    location: {
+      id: "loc_downtown",
+      name: "Downtown Auto Repair",
+    },
+    description: "AC system not cooling properly - diagnostic and repair",
   },
 ]
