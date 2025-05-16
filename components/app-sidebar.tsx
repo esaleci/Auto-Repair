@@ -41,75 +41,82 @@ const routes = [
   {
     label: "Dashboard",
     icon: Home,
-    href: "/",
+    href: "/dashboard",
     color: "text-sky-500",
   },
   {
     label: "Customers",
     icon: Users,
-    href: "/customers",
+    href: "/dashboard/customers",
     color: "text-violet-500",
   },
   {
     label: "Vehicles",
     icon: Car,
-    href: "/vehicles",
+    href: "/dashboard/vehicles",
     color: "text-pink-700",
   },
   {
     label: "Repair Orders",
     icon: Wrench,
-    href: "/repair-orders",
+    href: "/dashboard/repair-orders",
     color: "text-orange-500",
   },
   {
     label: "Appointments",
     icon: Calendar,
-    href: "/appointments",
+    href: "/dashboard/appointments",
     color: "text-emerald-500",
   },
   {
     label: "Invoices",
     icon: FileText,
-    href: "/invoices",
+    href: "/dashboard/invoices",
     color: "text-green-700",
   },
   {
     label: "Inventory",
     icon: Package,
-    href: "/inventory",
+    href: "/dashboard/inventory",
     color: "text-blue-600",
   },
   {
     label: "Locations",
     icon: Store,
-    href: "/locations",
+    href: "/dashboard/locations",
     color: "text-yellow-500",
   },
   {
     label: "Analytics",
     icon: BarChart4,
-    href: "/analytics",
+    href: "/dashboard/analytics",
     color: "text-purple-500",
   },
   {
     label: "Reports",
     icon: ClipboardList,
-    href: "/reports",
+    href: "/dashboard/reports",
     color: "text-red-500",
   },
   {
     label: "Settings",
     icon: Settings,
-    href: "/settings",
+    href: "/dashboard/settings",
     color: "text-gray-500",
   },
 ]
 
 export function AppSidebar() {
   const pathname = usePathname()
-  const { user, logout } = useAuth()
+  // let { user } = useAuth()
 
+  // if(!user){
+    const user = {
+    name: "Admin User",
+    role: "Administrator",
+    id: "admin_1",
+     }
+  // }
   return (
     <Sidebar>
       <SidebarHeader className="pb-0">
@@ -154,10 +161,13 @@ export function AppSidebar() {
           <div className="mt-4 border-t pt-4 mx-2">
             <div className="flex items-center justify-between mb-2 px-2">
               <div className="flex items-center">
-                <Avatar className="h-8 w-8 mr-2">
+                   <Avatar className="h-9 w-9">
+                                <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
+                              </Avatar>
+                {/* <Avatar className="h-8 w-8 mr-2">
                   <AvatarImage src={undefined || "/placeholder.svg"} alt={user.name} />
                   <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
-                </Avatar>
+                </Avatar> */}
                 <div>
                   <p className="text-sm font-medium">{user.name}</p>
                   <div className="flex items-center gap-1">
@@ -184,7 +194,7 @@ export function AppSidebar() {
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton onClick={logout} tooltip="Logout">
+                <SidebarMenuButton  tooltip="Logout">
                   <LogOut className="h-5 w-5 text-gray-500" />
                   <span>Logout</span>
                 </SidebarMenuButton>

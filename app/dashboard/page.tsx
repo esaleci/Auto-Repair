@@ -20,9 +20,9 @@ export default function Dashboard() {
   const completionPercentage = Math.round((completedOrders / totalOrders) * 100)
 
   return (
-    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6 bg-background">
+    <div className="flex-1 space-y-4 p-4 md:p-8 pt-6 bg-background flex-wrap">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      {/* <div className="flex items-center justify-between ">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">Welcome, Admin!</h2>
           <p className="text-muted-foreground">Manage your auto repair business efficiently.</p>
@@ -42,7 +42,7 @@ export default function Dashboard() {
             AD
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Progress indicator */}
       <Card className="border-none shadow-none bg-primary/5 dark:bg-primary/10">
@@ -131,13 +131,13 @@ export default function Dashboard() {
       </div>
 
       {/* Main content */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">
-          <CardHeader className="flex flex-row items-center justify-between">
-            <div>
+          <CardHeader className="flex  items-center justify-between flex-wrap">
+            
               <CardTitle>Recent Repair Orders</CardTitle>
               <CardDescription>Overview of the most recent repair orders</CardDescription>
-            </div>
+            
             <div className="flex items-center gap-2">
               <Button variant="outline" size="sm">
                 <Filter className="mr-2 h-4 w-4" />
