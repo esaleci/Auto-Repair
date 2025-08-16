@@ -14,8 +14,8 @@ export default  function DashboardNav() {
   <div className="flex gap-5 items-center font-semibold">
     <div className="flex items-center justify-between ">
         <div>
-          <h2 className="text-large md:text-3xl font-bold tracking-tight">Welcome, Admin!</h2>
-          <p className="text-xs md:text-based text-muted-foreground">Manage your auto repair business efficiently.</p>
+          <h2 className="text-large md:text-3xl font-bold tracking-tight">Welcome, Admin !</h2>
+          <p className="text-xs md:text-based text-muted-foreground hidden md:block">Manage your auto repair business efficiently.</p>
         </div>
       
       </div>
